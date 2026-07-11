@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CycleWise — a period education mini-app</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="root">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">CycleWise<small>a cycle education mini-app</small></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Made for the Menstrupedia internship brief</span>
+      <h1>Understand your cycle. <em>Unlearn the stigma.</em></h1>
+      <p class="lede">
+        A small app that predicts your current phase and next period, and pairs it with
+        myth-vs-fact cards — the same "make it easy to talk about periods" mission Menstrupedia
+        builds comics around, just built in code.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="scrollToTracker">Try the tracker</button>
+        <button class="btn btn-ghost" id="scrollToMyths">See myth cards</button>
+      </div>
+    </div>
+
+    <div class="wheel-card">
+      <div class="wheel-wrap">
+        <svg id="wheelSvg" viewBox="0 0 240 240" width="240" height="240">
+          <circle cx="120" cy="120" r="100" fill="none" stroke="#F5EAE3" stroke-width="26" />
+          <!-- phase arcs and marker injected by script.js -->
+        </svg>
+        <div class="wheel-center">
+          <span class="day-label">Cycle day</span>
+          <span class="day-num" id="cycleDayNum">1</span>
+          <span class="phase-name" id="phaseNameTag">Menstrual</span>
+        </div>
+      </div>
+      <div class="legend" id="legend"></div>
+    </div>
+  </section>
+
+  <div class="panel" id="tracker">
+    <h2>Your cycle, mapped out</h2>
+    <p class="sub">Enter your details — everything recalculates live, nothing is sent anywhere.</p>
+    <div class="form-row">
+      <div class="field">
+        <label for="lastPeriod">Last period start date</label>
+        <input type="date" id="lastPeriod" />
+      </div>
+      <div class="field">
+        <label for="cycleLen">Average cycle length</label>
+        <input type="number" id="cycleLen" min="15" max="45" value="28" />
+        <div class="hint">Typically 21–35 days</div>
+      </div>
+      <div class="field">
+        <label for="periodLen">Period length</label>
+        <input type="number" id="periodLen" min="1" max="10" value="5" />
+        <div class="hint">Typically 3–7 days</div>
+      </div>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight">
+        <div class="label">Current phase</div>
+        <div class="value" id="insightPhase">—</div>
+        <div class="detail" id="insightPhaseBlurb">—</div>
+      </div>
+      <div class="insight">
+        <div class="label">Next period</div>
+        <div class="value" id="insightNext">—</div>
+        <div class="detail" id="insightNextDetail">—</div>
+      </div>
+      <div class="insight">
+        <div class="label">Fertile window</div>
+        <div class="value" id="insightFertile">—</div>
+        <div class="detail">estimated, ±2 days around ovulation</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myths">
+    <div class="section-head">
+      <h2>Myth or fact?</h2>
+      <span class="sub">Tap a card to flip it</span>
+    </div>
+    <div class="myth-grid" id="mythGrid"></div>
+  </div>
+
+  <footer>
+    <p>Built as a sample project for the Menstrupedia Software Developer Intern application.</p>
+    <a href="https://www.menstrupedia.com" target="_blank" rel="noreferrer">menstrupedia.com →</a>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
