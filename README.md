@@ -1,9 +1,3 @@
-# CycleWise — a mini project for the Menstrupedia internship application
-
-A small, plain HTML/CSS/JavaScript app built to match the Menstrupedia Software
-Developer Intern JD — no frameworks, no build tools, just three clean files
-working together, applied directly to their mission of making period education
-easy and stigma-free.
 
 ## Files
 
@@ -20,8 +14,7 @@ easy and stigma-free.
   length; it live-calculates your current phase, next period date, and estimated
   fertile window using plain `Date` math. All calculation happens client-side —
   no data leaves the browser.
-- **Myth vs. Fact cards** — six flip cards busting common period myths, in the
-  same spirit as Menstrupedia's comics, built with a CSS 3D flip and a click
+- **Myth vs. Fact cards** — six flip cards busting common period myths, built with a CSS 3D flip and a click
   listener per card.
 
 ## How to run
